@@ -1,0 +1,8 @@
+<h1>Categorias:</h1>
+<hr>
+{{#each categoria}}
+    <a href="/admin/postfind/{{_id}}">{{nome}}</a>
+    <br>
+{{else}}
+    <h3>Nenhuma categoria registrada</h3>
+{{/each}}

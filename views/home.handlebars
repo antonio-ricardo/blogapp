@@ -1,0 +1,22 @@
+{{#if chama}}
+    <div class="alert alert-success">{{chama}}</div>
+{{/if}}
+{{#if error}}
+    <div class="alert alert-danger">{{error}}</div>
+{{/if}}
+{{>_junbo}}
+<h2>Postagens recentes:</h3>
+{{#each postagens}}
+<div class="card">
+    <div class="card-body">
+        <small>Categoria: {{categoria.nome}}</small>
+        <h3>{{titulo}}</h4>
+        <small>{{conteudo}}</small>
+        <hr>
+        <a href="/admin/lerpostagem/{{_id}}"><button class="btn btn-success">Ler mais</button></a>
+    </div>
+</div>
+<br><br>
+{{else}}
+    <h5>Nenhuma postagem cadastrada</h5>
+{{/each}}

@@ -1,0 +1,42 @@
+<h2>Editar postagem:</h2>
+<br><br>
+<div class="card">
+    <div class="card-body">
+        <form action="/admin/postagens/editada" method="post">
+            <input type="hidden" name="id" id="" value={{postagens._id}}>
+            <label for="titulo">Titulo:</label>
+            <br>
+            <input type="text" name="titulo" id="" value={{postagens.titulo}}>
+            <br>
+            <label for="slug">Slug:</label>
+            <br>
+            <input type="text" name="slug" id="" value={{postagens.slug}}> 
+            <br>
+            <label for="descricao">Descrição:</label>
+            <br>
+            <input type="text" name="descricao" id="" value={{postagens.descricao}}>
+            <br>
+            <label for="conteudo">Conteudo:</label>
+            <br>
+            <textarea name="conteudo" class="form-control" id="" cols="30" rows="10">{{postagens.conteudo}}</textarea>
+            <br>
+            <label for="categoria">Categoria:</label>
+            <br>
+            <select name="categoria" id="">
+                {{#each categoria}}
+                    <option value={{_id}}>{{nome}}</option>
+                {{else}}
+                    <option value="0">Nenhuma categoria registrada</option>
+                {{/each}}
+            </select>
+            <br><br>
+            <button type="submit" class="btn btn-success">Editar</button>
+        </form>
+        <br>
+        <form action="/admin/postagens/deletar" method="post">
+        <input type="hidden" name="id" id="" value={{postagens._id}}>
+        <a href=""><button class="btn btn-danger">Deletar</button></a></form>
+    </div>
+</div>
+<br>
+<br>
